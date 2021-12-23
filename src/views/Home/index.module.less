@@ -1,0 +1,97 @@
+.home{
+  //background-image: linear-gradient( 135deg, #69FF97 10%, #00E4FF 100%);
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+
+  button{
+    margin-left: 10px;
+  }
+}
+
+.girl{
+  width: 200px;
+  height: 200px;
+}
+
+.viteReact{
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .vite{
+    height: 100px;
+    width:100px;
+    animation-name: vite-spin;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+  }
+
+
+  .react{
+    height: 170px;
+    width:170px;
+    animation-name: react-spin;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+  }
+
+  .react:hover{
+    animation-play-state: paused;
+  }
+
+  .add{
+    height: 50px;
+    width: 50px;
+  }
+}
+
+.me{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 700;
+  height: 80px;
+
+  .span{
+    cursor:pointer;
+  }
+
+  img{
+    cursor: pointer;
+  }
+
+  .span {
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent;
+    transition-property: border-bottom-color;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.5s;
+  }
+  .span:hover {
+    border-bottom: 2px solid black;
+  }
+}
+
+
+@keyframes react-spin{
+  from{
+    transform: rotateZ(0deg);
+  }
+  to{
+    transform: rotateZ(180deg);
+  }
+}
+
+@keyframes vite-spin{
+  from{
+    transform: rotateY(0deg);
+  }
+  to{
+    transform: rotateY(360deg);
+  }
+}
