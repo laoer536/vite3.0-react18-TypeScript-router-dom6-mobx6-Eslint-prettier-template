@@ -8,6 +8,8 @@ import {
 } from "react-router-dom";
 import AboutStyle from "./index.module.less";
 import bbbIcon from "@assets/Images/bbb.jpg";
+import { getCityTotalNumber } from "@/network/api";
+import { GetCityTotal } from "@/network/api-res-model";
 
 const Index = () => {
   /**state  state部分**/
@@ -17,6 +19,14 @@ const Index = () => {
   const history = useNavigate();
 
   /**effect  effect部分**/
+  useEffect(() => {
+    getCityTotalNumber({
+      city: "成都",
+      endTime: "2021-01-12",
+      startTime: "2021-12-12",
+    }).then((res: GetCityTotal) => console.log(res));
+  }, []);
+
   useEffect(() => {
     //函数体部分相当于componentDidMount
     console.log("222");
