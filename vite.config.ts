@@ -16,8 +16,6 @@ export default ({ mode }: { mode: string }) => {
     root: process.cwd(),
     //模式配置
     mode: mode,
-    //静态资源服务的文件夹
-    publicDir: "dist",
     //类型： 'info' | 'warn' | 'error' | 'silent'---调整控制台输出的级别，默认为 'info'。
     logLevel: "info",
     resolve: {
@@ -56,6 +54,7 @@ export default ({ mode }: { mode: string }) => {
       assetsInlineLimit: 4096, //小于此阈值的导入或引用资源将内联为 base64 编码，以避免额外的 http 请求。设置为 0 可以完全禁用此项
       //构建后是否生成 source map 文件
       sourcemap: mode != "production",
+      reportCompressedSize: true, //设置为 false 以禁用报告压缩块大小。可以略微提高构建速度。
       brotliSize: true, //启用/禁用 brotli 压缩大小报告。压缩大型输出文件可能会很慢，因此禁用该功能可能会提高大型项目的构建性能。
 
       //打包去掉打印信息 保留debugger

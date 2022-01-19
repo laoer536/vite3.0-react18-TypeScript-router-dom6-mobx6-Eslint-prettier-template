@@ -10,6 +10,10 @@ import meIcon from "@assets/Images/me.svg";
 const Index = () => {
   /**state  state部分**/
   const [num, setNum] = useState(1);
+  const [obj, setObj] = useState([
+    { name: "liu", age: "23" },
+    { name: "liu", age: "23" },
+  ]);
   const navigate = useNavigate();
 
   /**effect  effect部分**/
@@ -27,6 +31,8 @@ const Index = () => {
       //query: { name: "liujie" }, //react-router-dom6已废弃
     });
   }
+
+  console.log("11111");
 
   function goToMore() {
     navigate("/more");
@@ -72,6 +78,17 @@ const Index = () => {
       <button onClick={() => goToChild2()}>点击显示子路由2</button>
       <br />
       <br />
+      {obj.map((item, index) => (
+        <div key={index}>
+          {/** 这里仅仅是测试当后端意外修改了一个字段 前端还是按照原来的字段取 会发现TMD取值也能取 并且控制台不会报错
+             因为取到的值为undefined 框架可以渲染undefined 渲染为空白 相当于'' 如果是null也是一样的效果
+           卧槽了  暂时没有找到只要取到值为undefined都报错的方法 所以以后从后端取来的数据字段
+             ，以及对应的类型都要严格同步，把关，这，不报错就很老火，不好排查问题 */}
+          {"1111"}-{item.a}-{"1111"}
+          {"2222"}-{undefined}-{"2222"}
+          {"3333"}-{null}-{"3333"}
+        </div>
+      ))}
       <Outlet />
     </div>
   );
