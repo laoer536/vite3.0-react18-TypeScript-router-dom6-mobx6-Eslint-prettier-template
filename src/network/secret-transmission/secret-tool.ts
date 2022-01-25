@@ -1,5 +1,5 @@
 /**文档说明
- * @Description:这里是前端加密文档配置可以用于axios请求拦截和响应拦截
+ * @Description: 这里是前端加密配置可以用于axios请求拦截和响应拦截  如果你的项目不需要 那么只需要删除该文件夹以及对应的'crypto-js'和'jsencrypt'依赖
  * @author liuJie
  * @Email 1547698569@qq.com
  * @date 2021/12/22 21:20
