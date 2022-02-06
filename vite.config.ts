@@ -59,6 +59,7 @@ export default ({ mode }: { mode: string }) => {
       brotliSize: true, //启用/禁用 brotli 压缩大小报告。压缩大型输出文件可能会很慢，因此禁用该功能可能会提高大型项目的构建性能。
 
       //打包去掉打印信息 保留debugger
+      minify: "terser",
       terserOptions: {
         compress: {
           drop_console: true,
