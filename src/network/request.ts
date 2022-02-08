@@ -95,6 +95,8 @@ class MyAxios {
 
         //需要对收到的数据进行解密处理？
         //传入拿到的值的加密key,通过rsa解密方法得到解密的key
+        // let endata = data.data.endata,
+        //     enkey = data.data.enkey;
         // let key = secretTool.rsaDecrypt(enkey);
         //得到解密的key,和原来存在数据加密key一起传入再通过rsa解密方法得到最终的纯文本数据
         // let plainText = secretTool.aesDecrypt(endata, key);
