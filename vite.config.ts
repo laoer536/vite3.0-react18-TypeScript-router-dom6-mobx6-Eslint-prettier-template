@@ -12,7 +12,7 @@ export default ({ mode }: { mode: string }) => {
   return defineConfig({
     plugins: [react()],
     //项目部署的基础路径,
-    base: loadEnv(mode, process.cwd()).VITE_PUBLIC_PATH, //关键代码，只能这样设置之后才能将环境配置文件加载进来，后续才能直接在JS等逻辑代码中使用import.meta.env.VITE_环境变量名，并且拿到值
+    base: loadEnv(mode, process.cwd()).VITE_PUBLIC_PATH,
     //项目根目录
     root: process.cwd(),
     //模式配置
