@@ -165,6 +165,7 @@ class MyAxios {
     if (data.rsCode !== "0") {
       /** 这里rsCode代表后台给的操作码 表示操作状态 */
       /** 这里可以提示操作失败啊 啥的 这里根据后台业务变 每个公司resBaseInfo返回类型大都不一样*/
+      return Promise.reject(data.rsCode);
     }
 
     /**全局提示*/
