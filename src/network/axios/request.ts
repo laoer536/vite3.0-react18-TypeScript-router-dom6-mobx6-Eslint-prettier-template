@@ -61,10 +61,11 @@ class MyAxios {
         if (data.rsCode !== 0) {
           alert(`${data.rsCause}`);
         }
-        if (data.data) {
-          return data.data;
+        if (data instanceof Blob) {
+          //兼容一下下方的文件下载处理
+          return response;
         } else {
-          return data;
+          return data.data; //因为下方封装默认泛型默认定义到了response下的data下的resBaseInfo下的data
         }
       },
       (error: AxiosError) => {
