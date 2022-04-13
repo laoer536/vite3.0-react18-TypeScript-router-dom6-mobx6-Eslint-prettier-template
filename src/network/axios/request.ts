@@ -121,23 +121,46 @@ class MyAxios {
     });
   }
 
-  axiosDownload<T = Blob>(
+  axiosDownload(
     url: string,
     data?: object,
+    fileName?: string, //用于自定义文件名
     otherConfig?: AxiosRequestConfig,
     controller?: AbortController
-  ): Promise<T> {
-    return this.axiosInstance.get(url, {
-      params: data,
-      ...otherConfig,
-      signal: controller ? controller.signal : undefined, //用于文件下载可以取消  只需在外部调用controller.abort()即可。 参考//https://juejin.cn/post/6954919023205154824
-    });
+  ): void {
+    this.axiosInstance
+      .get<Blob>(url, {
+        params: data,
+        ...otherConfig,
+        responseType: "blob",
+        signal: controller ? controller.signal : undefined, //用于文件下载可以取消  只需在外部调用controller.abort()即可。 参考//https://juejin.cn/post/6954919023205154824以及https://axios-http.com/zh/docs/cancellation
+      })
+      .then((res) => {
+        const blob = new Blob([res.data]);
+        const a = document.createElement("a");
+        a.style.display = "none";
+        if (fileName) {
+          a.download = fileName;
+        } else {
+          a.download = decodeURIComponent(
+            res.headers["content-disposition"].split(";")[1].split("=")[1] //对于使用encodeURI()或者encodeURIComponent()将文件名中文转码的情况 这里解码一下
+          );
+          //如果没有编码就直接 a.download =  res.headers["content-disposition"].split(";")[1].split("=")[1]
+        }
+        a.href = URL.createObjectURL(blob);
+        document.body.appendChild(a);
+        a.click();
+        URL.revokeObjectURL(a.href);
+        document.body.removeChild(a);
+      });
   }
 
   urlDownload(fileUrl: string, fileName: string, serveBaseUrl?: string) {
     const a = document.createElement("a");
+    a.style.display = "none";
     a.download = fileName;
     a.href = serveBaseUrl ? `${serveBaseUrl}${fileUrl}` : fileUrl;
+    document.body.appendChild(a);
     a.click();
     URL.revokeObjectURL(a.href); // 释放URL 对象
     document.body.removeChild(a);
