@@ -25,14 +25,9 @@ class MyAxios {
         //headers的access-token部分在请求拦截中加入
         const token: string | null = localStorage.getItem("token");
         if (token) {
-          // config.headers["access-token"] = token;
-          if (config.headers) {
-            config.headers["access-token"] = token;
-          } else {
-            alert("axios中config.headers不存在！");
-          }
-        } else {
-          alert("获取token失败！");
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
+          config.headers["access-token"] = token;
         }
         console.log(`本次请求的config信息：`, config);
         return config;
