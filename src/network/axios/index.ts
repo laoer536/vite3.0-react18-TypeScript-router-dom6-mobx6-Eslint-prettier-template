@@ -1,24 +1,15 @@
 import axios from "axios";
-import {
+import { axiosBaseOptions } from "@/network/axios/axios-setup";
+import type {
   AxiosRequestConfig,
   AxiosResponse,
   AxiosError,
   AxiosInstance,
 } from "axios";
+
+import type { Upload, AxiosDownload, UrlDownload } from "@/network/axios/type";
 // import secretTool from "@/network/secret-transmission/secret-tool";  前端涉及加密解密时启用
 // import { resBaseInfo } from "@/network/api/api-res-model";
-
-/** 定义axios基础配置 */
-const axiosBaseOptions: AxiosRequestConfig = {
-  //未配置跨域下启用(后端处理了跨域问题的情况下)
-  //baseURL: process.env.VUE_APP_API_BASE_URL,
-
-  //vue.config.js已配置跨域，并且用/api替换baseUrl下启用
-  //优化：如果本地定义了跨域 那么在本地测试时 跨域生效 api base url 需要为跨域的配置
-  // 但是上线时跨域便不再生效 需要使用线上的baseurl 而不是跨域配置的  于是需要动态加入base url 到axios中 于是需要在打包环境和本地测试环境中设定不同的base url
-  baseURL: import.meta.env.VITE_API_BASE_URL as string,
-  timeout: 8000,
-};
 
 class MyAxios {
   private readonly axiosInstance: AxiosInstance;
@@ -111,29 +102,22 @@ class MyAxios {
     return this.axiosInstance.delete(url, data);
   }
 
-  upload<T = any>(
-    url: string,
-    file: FormData | File,
-    controller?: AbortController
-  ): Promise<T> {
+  upload<T = any>(params: Upload): Promise<T> {
+    const { url, file, controller, onUploadProgress } = params;
     return this.axiosInstance.post(url, file, {
       headers: { "Content-Type": "multipart/form-data" },
+      onUploadProgress,
       signal: controller ? controller.signal : undefined, //用于文件上传可以取消  只需在外部调用controller.abort()即可。 参考//https://juejin.cn/post/6954919023205154824
     });
   }
 
-  axiosDownload(
-    url: string,
-    data?: object,
-    fileName?: string, //用于自定义文件名
-    otherConfig?: AxiosRequestConfig,
-    controller?: AbortController
-  ): void {
+  axiosDownload(params: AxiosDownload): void {
+    const { url, data, controller, fileName, onDownloadProgress } = params;
     this.axiosInstance
       .get<Blob>(url, {
         params: data,
-        ...otherConfig,
         responseType: "blob",
+        onDownloadProgress,
         signal: controller ? controller.signal : undefined, //用于文件下载可以取消  只需在外部调用controller.abort()即可。 参考//https://juejin.cn/post/6954919023205154824以及https://axios-http.com/zh/docs/cancellation
       })
       .then((res) => {
@@ -156,7 +140,8 @@ class MyAxios {
       });
   }
 
-  urlDownload(fileUrl: string, fileName: string, serveBaseUrl?: string) {
+  urlDownload(params: UrlDownload) {
+    const { fileName, serveBaseUrl, fileUrl } = params;
     const a = document.createElement("a");
     a.style.display = "none";
     a.download = fileName;
