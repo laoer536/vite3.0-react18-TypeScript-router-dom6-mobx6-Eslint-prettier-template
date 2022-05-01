@@ -8,8 +8,8 @@ import {
 } from "react-router-dom";
 import AboutStyle from "./index.module.less";
 import bbbIcon from "@assets/Images/bbb.jpg";
-import { getCityTotalNumber } from "@/network/api";
-import { GetCityTotal } from "@/network/api-res-model";
+import { getCityTotalNumber } from "@/network/api/api";
+import { GetCityTotal } from "@/network/api/api-res-model";
 
 const Index = () => {
   /**state  state部分**/
