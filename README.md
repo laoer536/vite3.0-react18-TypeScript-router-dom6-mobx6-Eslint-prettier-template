@@ -1,4 +1,4 @@
-# vite-react17-TypeScript-router-dom6-mobx6-Eslint-prettier-template
+# vite3.0-react18-TypeScript-router-dom6-mobx6-Eslint-prettier-template
 
 这是一个 vite3.0+react18 的模板项目 希望对你有所启发 别忘了使用 prettier 规范你的代码
 
