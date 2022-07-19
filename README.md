@@ -1,12 +1,8 @@
 # vite-react17-TypeScript-router-dom6-mobx6-Eslint-prettier-template
 
-这是一个vite+react17的模板项目 希望对你有所启发  别忘了使用prettier规范你的代码
+这是一个 vite+react17 的模板项目 希望对你有所启发 别忘了使用 prettier 规范你的代码
 
 ![image-20211223222015790](https://s2.loli.net/2021/12/23/MZITHlP17ipRFEj.png)
-
-
-
-
 
 ## 步骤说明：
 
@@ -24,12 +20,9 @@
    >
    > (可根据项目添加打包命令以及环境文件）
 
-
-
 <div align="left">
 <img alt="Liu Jie" src="https://s2.loli.net/2021/12/16/rxjhMFtGElVIuyz.png" width=50 />
 
-*I'm LiuJie, a Front-end technical lunatics.*
+_I'm LiuJie, a Front-end technical lunatics._
 
 [Github](https://github.com/laoer536)
-
