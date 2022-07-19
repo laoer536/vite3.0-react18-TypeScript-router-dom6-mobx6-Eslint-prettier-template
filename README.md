@@ -1,12 +1,10 @@
 # vite-react17-TypeScript-router-dom6-mobx6-Eslint-prettier-template
 
-这是一个 vite+react17 的模板项目 希望对你有所启发 别忘了使用 prettier 规范你的代码
-
-![image-20211223222015790](https://s2.loli.net/2021/12/23/MZITHlP17ipRFEj.png)
+这是一个 vite3.0+react18 的模板项目 希望对你有所启发 别忘了使用 prettier 规范你的代码
 
 ## 步骤说明：
 
-1. 克隆代码：执行命令---git clone git://github.com/laoer536/vite-react17-TypeScript-router-dom6-mobx6-Eslint-prettier-template
+1. 克隆代码：执行命令---git clone https://github.com/laoer536/vite3.0-react18-TypeScript-router-dom6-mobx6-Eslint-prettier-template
 
 2. 编辑器打开并下载依赖：执行命令---yarn
 
