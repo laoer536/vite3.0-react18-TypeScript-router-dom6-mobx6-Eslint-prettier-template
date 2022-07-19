@@ -12,7 +12,7 @@
 
 4. 打包项目
 
-   > 测试包：yarn build-test
+   > 测试包：yarn build:test
    >
    > 正式包：yarn build
    >
