@@ -1,26 +1,30 @@
-# vite3.0-react18-TypeScript-router-dom6-mobx6-Eslint-prettier-template
+# Vite3, React18 (A simple generic example template)
 
-这是一个 vite3.0+react18 的模板项目 希望对你有所启发 别忘了使用 prettier 规范你的代码
+This starter template includes:
 
-## 步骤说明：
+- [Vite 3](https://vitejs.dev/guide/)
+- [React18](https://react.docschina.org/)
+- [React Router dom 6](https://reactrouter.com/en/main)
+- [MobX6](https://mobx.js.org/README.html)
+- Introduce typescript, use tsx writing style.
+- Aktiver Eslint,smukkere,husky,automatisk specifikation af projektkode.
 
-1. 克隆代码：执行命令---git clone https://github.com/laoer536/vite3.0-react18-TypeScript-router-dom6-mobx6-Eslint-prettier-template
+Unplugin Utilities:
 
-2. 编辑器打开并下载依赖：执行命令---yarn
+- [unplugin-auto-import](https://github.com/antfu/unplugin-auto-import) - auto import the most used APIs
 
-3. 运行项目：yarn dev
+### Getting Started
 
-4. 打包项目
+1. Clone code: execute command---git clone https://github.com/laoer536/vite3.0-react18-TypeScript-router-dom6-mobx6-Eslint-prettier-template
 
-   > 测试包：yarn build:test
+2. The editor opens and downloads the dependencies：Execution of commands---yarn
+
+3. Running Projects：yarn dev
+
+4. Packing project
+
+   > Test Package：yarn build:test
    >
-   > 正式包：yarn build
+   > Production Package：yarn build
    >
-   > (可根据项目添加打包命令以及环境文件）
-
-<div align="left">
-<img alt="Liu Jie" src="https://s2.loli.net/2021/12/16/rxjhMFtGElVIuyz.png" width=50 />
-
-_I'm LiuJie, a Front-end technical lunatics._
-
-[Github](https://github.com/laoer536)
+   > (The environment variable file (env) has been added to the root directory, so you can add packaging commands and environment files according to your project.）
