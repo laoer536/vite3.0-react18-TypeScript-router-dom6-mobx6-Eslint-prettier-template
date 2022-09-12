@@ -5,7 +5,7 @@ This starter template includes:
 - [Vite 3](https://vitejs.dev/guide/)
 - [React18](https://react.docschina.org/)
 - [React Router dom 6](https://reactrouter.com/en/main)
-- [MobX6](https://mobx.js.org/README.html)
+- [Mobx6](https://mobx.js.org/README.html)
 - Introduce typescript, use tsx writing style.
 - Aktiver Eslint,prettier,husky,automatisk specifikation af projektkode.
 
