@@ -7,7 +7,7 @@ This starter template includes:
 - [React Router dom 6](https://reactrouter.com/en/main)
 - [MobX6](https://mobx.js.org/README.html)
 - Introduce typescript, use tsx writing style.
-- Aktiver Eslint,smukkere,husky,automatisk specifikation af projektkode.
+- Aktiver Eslint,prettier,husky,automatisk specifikation af projektkode.
 
 Unplugin Utilities:
 
