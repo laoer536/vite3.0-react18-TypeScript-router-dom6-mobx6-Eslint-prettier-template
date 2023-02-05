@@ -120,7 +120,7 @@ class MyAxios {
         } else {
           //这里需要更据实际情况从‘content-disposition’中截取 不一定正确
           a.download = decodeURIComponent(
-            res.headers['content-disposition'].split(';').slice(-1)[0].split('=')[1].replaceAll('"', '') //对于使用encodeURI()或者encodeURIComponent()将文件名中文转码的情况 这里解码一下
+            (res.headers['content-disposition'] as string).split(';').slice(-1)[0].split('=')[1].replaceAll('"', '') //对于使用encodeURI()或者encodeURIComponent()将文件名中文转码的情况 这里解码一下
           )
         }
         a.href = URL.createObjectURL(blob)
