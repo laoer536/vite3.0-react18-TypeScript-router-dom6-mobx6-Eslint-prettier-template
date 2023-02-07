@@ -6,7 +6,7 @@
   },
   "extends": [
     "./.eslintrc-auto-import.json",
-    "eslint-config-code-style-lint-react-ts"
+    "code-style-lint-react-ts"
   ],
   "rules": {}
 }
