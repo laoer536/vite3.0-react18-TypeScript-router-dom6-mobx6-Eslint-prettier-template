@@ -22,7 +22,7 @@ class MyAxios {
         if (token) {
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
-          config.headers['access-token'] = token
+          config.headers['authorization'] = `Bearer ${token}`
         }
         console.log(`本次请求的config信息：`, config)
         return config
