@@ -1,4 +1,4 @@
-import type { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
+import type { AxiosError, AxiosInstance, AxiosRequestConfig } from 'axios'
 import axios from 'axios'
 import { axiosBaseOptions } from '@/network/axios/axios-setup'
 
@@ -16,7 +16,7 @@ class MyAxios {
   private initInterceptors() {
     // 请求拦截  上传数据的加密处理在这里配置
     this.axiosInstance.interceptors.request.use(
-      (config: AxiosRequestConfig) => {
+      (config) => {
         //headers的access-token部分在请求拦截中加入
         const token: string | null = localStorage.getItem('token')
         if (token) {
@@ -35,7 +35,7 @@ class MyAxios {
 
     //响应拦截  从接口响应的数据在这里处理 例如解密等  时间发生在then catch前
     this.axiosInstance.interceptors.response.use(
-      (response: AxiosResponse) => {
+      (response) => {
         // resBaseInfo 针对接口返回有基本格式的情况下 如上面导入的resBaseInfo基本请求返回体 基本返回体由rsCode rsCause 和 data构成
         const { data } = response
         console.log('data', data)
@@ -77,23 +77,23 @@ class MyAxios {
     )
   }
 
-  get<T = any>(url: string, data?: object): Promise<T> {
+  get<T>(url: string, data?: object): Promise<T> {
     return this.axiosInstance.get(url, { params: data })
   }
 
-  post<T = any>(url: string, data?: object): Promise<T> {
+  post<T>(url: string, data?: object): Promise<T> {
     return this.axiosInstance.post(url, data)
   }
 
-  put<T = any>(url: string, data?: object): Promise<T> {
+  put<T>(url: string, data?: object): Promise<T> {
     return this.axiosInstance.put(url, data)
   }
 
-  delete<T = any>(url: string, data?: object): Promise<T> {
+  delete<T>(url: string, data?: object): Promise<T> {
     return this.axiosInstance.delete(url, data)
   }
 
-  upload<T = any>(params: Upload): Promise<T> {
+  upload<T>(params: Upload): Promise<T> {
     const { url, file, controller, onUploadProgress } = params
     return this.axiosInstance.post(url, file, {
       headers: { 'Content-Type': 'multipart/form-data' },
