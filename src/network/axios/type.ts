@@ -1,10 +1,10 @@
-import { AxiosRequestConfig } from 'axios'
+import type { AxiosProgressEvent, AxiosRequestConfig } from 'axios'
 
 export interface Upload {
   url: string
   file: FormData
   controller?: AbortController
-  onUploadProgress?: (progressEvent: any) => void
+  onUploadProgress?: (progressEvent: AxiosProgressEvent) => void
 }
 
 export interface AxiosDownload {
@@ -13,7 +13,7 @@ export interface AxiosDownload {
   fileName?: string //用于自定义文件名
   otherConfig?: AxiosRequestConfig
   controller?: AbortController
-  onDownloadProgress?: (progressEvent: any) => void
+  onDownloadProgress?: (progressEvent: AxiosProgressEvent) => void
 }
 
 export interface UrlDownload {
