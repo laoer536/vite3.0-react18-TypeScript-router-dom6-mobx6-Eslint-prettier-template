@@ -2,7 +2,14 @@ import type { AxiosProgressEvent, AxiosRequestConfig } from 'axios'
 
 export interface Upload {
   url: string
-  file: FormData
+  formData: FormData
+  controller?: AbortController
+  onUploadProgress?: (progressEvent: AxiosProgressEvent) => void
+}
+
+export interface UploadStream {
+  url: string
+  file: File
   controller?: AbortController
   onUploadProgress?: (progressEvent: AxiosProgressEvent) => void
 }

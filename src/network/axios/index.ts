@@ -3,8 +3,7 @@ import axios from 'axios'
 import { axiosBaseOptions } from '@/network/axios/axios-setup'
 
 import type { AxiosDownload, Upload, UrlDownload } from '@/network/axios/type'
-// import secretTool from "@/network/secret-transmission/secret-tool";  前端涉及加密解密时启用
-// import { resBaseInfo } from "@/network/api/api-res-model";
+import { UploadStream } from '@/network/axios/type'
 
 //优先采用RFC 5897  让与url直接通过a标签的下载的结果相同
 function analysisFilename(contentDisposition: string): string {
@@ -106,10 +105,28 @@ class MyAxios {
     return this.axiosInstance.delete(url, data)
   }
 
-  upload<T>(params: Upload): Promise<T> {
-    const { url, file, controller, onUploadProgress } = params
-    return this.axiosInstance.post(url, file, {
+  upload<T = any>(data: Upload): Promise<T> {
+    const { url, formData, controller, onUploadProgress } = data
+    return this.axiosInstance.post(url, formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
+      onUploadProgress,
+      signal: controller ? controller.signal : undefined, //用于文件上传可以取消  只需在外部调用controller.abort()即可。 参考//https://juejin.cn/post/6954919023205154824
+    })
+  }
+
+  async uploadStream<T = any>(data: UploadStream): Promise<T> {
+    const { url, file, controller, onUploadProgress } = data
+    /** generateSHA 生成文件SHA256 hash  用于标识文件唯一性 往往会用上 这里会用到crypto-js库 **/
+    // async function generateSHA(file: File): Promise<string> {
+    //   const wordArray = CryptoJs.lib.WordArray.create(await file.arrayBuffer())
+    //   const sha256 = CryptoJs.SHA256(wordArray)
+    //   //转16进制
+    //   return sha256.toString()
+    // }
+    // const Hash = await generateSHA(File)
+    const fileArrayBuffer = await file.arrayBuffer()
+    return this.axiosInstance.post(url, fileArrayBuffer, {
+      headers: { 'Content-Type': 'application/octet-stream' },
       onUploadProgress,
       signal: controller ? controller.signal : undefined, //用于文件上传可以取消  只需在外部调用controller.abort()即可。 参考//https://juejin.cn/post/6954919023205154824
     })
