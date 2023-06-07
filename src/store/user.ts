@@ -1,19 +1,14 @@
-import { makeAutoObservable } from 'mobx'
+import { create } from 'zustand'
 
-class User {
-  userName = 'LiuJie1998'
-  num = 0
-
-  constructor() {
-    makeAutoObservable(this)
-  }
-
-  changeName() {
-    this.userName = 'laoer536'
-  }
-  changeNum() {
-    this.num++
-  }
+interface UserStore {
+  userName: string
+  num: number
+  changeName: () => void
+  changeNum: () => void
 }
-
-export default new User()
+export const useUserStore = create<UserStore>((set) => ({
+  userName: 'LiuJie1998',
+  num: 0,
+  changeName: () => set({ userName: 'laoer536' }),
+  changeNum: () => set((state) => ({ num: state.num + 1 })),
+}))
