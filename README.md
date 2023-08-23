@@ -19,12 +19,12 @@ Unplugin Utilities:
 
 2. The editor opens and downloads the dependencies：Execution of commands---yarn
 
-3. Running Projects：yarn dev
+3. Running Projects：pnpm dev
 
 4. Packing project
 
-   > Test Package：yarn build:test
+   > Test Package：pnpm build:test
    >
-   > Production Package：yarn build
+   > Production Package：pnpm build
    >
    > (The environment variable file (env) has been added to the root directory, so you can add packaging commands and environment files according to your project.）
