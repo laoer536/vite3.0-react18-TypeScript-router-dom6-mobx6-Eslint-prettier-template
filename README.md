@@ -17,7 +17,7 @@ Unplugin Utilities:
 
 1. Clone code: execute command---git clone https://github.com/laoer536/vite3.0-react18-TypeScript-router-dom6-mobx6-Eslint-prettier-template
 
-2. The editor opens and downloads the dependencies：Execution of commands---yarn
+2. The editor opens and downloads the dependencies：Execution of commands--- `pnpm i`
 
 3. Running Projects：pnpm dev
 
