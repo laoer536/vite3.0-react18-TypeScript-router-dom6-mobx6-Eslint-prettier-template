@@ -132,30 +132,36 @@ class MyAxios {
     })
   }
 
-  axiosDownload(params: AxiosDownload): void {
+  axiosDownload(params: AxiosDownload): Promise<any> {
     const { url, data, controller, fileName, onDownloadProgress } = params
-    this.axiosInstance
-      .get<Blob>(url, {
-        params: data,
-        responseType: 'blob',
-        onDownloadProgress,
-        signal: controller ? controller.signal : undefined, //用于文件下载可以取消  只需在外部调用controller.abort()即可。 参考//https://juejin.cn/post/6954919023205154824以及https://axios-http.com/zh/docs/cancellation
-      })
-      .then((res) => {
-        const blob = new Blob([res.data])
-        const a = document.createElement('a')
-        a.style.display = 'none'
-        if (fileName) {
-          a.download = fileName
-        } else {
-          a.download = decodeURIComponent(analysisFilename(res.headers['content-disposition']))
-        }
-        a.href = URL.createObjectURL(blob)
-        document.body.appendChild(a)
-        a.click()
-        URL.revokeObjectURL(a.href)
-        document.body.removeChild(a)
-      })
+    return new Promise((resolve, reject) => {
+      this.axiosInstance
+        .get<Blob>(url, {
+          params: data,
+          responseType: 'blob',
+          onDownloadProgress,
+          signal: controller ? controller.signal : undefined, //用于文件下载可以取消  只需在外部调用controller.abort()即可。 参考//https://juejin.cn/post/6954919023205154824以及https://axios-http.com/zh/docs/cancellation
+        })
+        .then((res) => {
+          const blob = new Blob([res.data])
+          const a = document.createElement('a')
+          a.style.display = 'none'
+          if (fileName) {
+            a.download = fileName
+          } else {
+            a.download = decodeURIComponent(analysisFilename(res.headers['content-disposition']))
+          }
+          a.href = URL.createObjectURL(blob)
+          document.body.appendChild(a)
+          a.click()
+          URL.revokeObjectURL(a.href)
+          document.body.removeChild(a)
+          resolve(true)
+        })
+        .catch((err) => {
+          reject(err)
+        })
+    })
   }
 
   urlDownload(params: UrlDownload) {
