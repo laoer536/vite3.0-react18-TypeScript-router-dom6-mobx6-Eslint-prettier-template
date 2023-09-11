@@ -132,7 +132,7 @@ class MyAxios {
     })
   }
 
-  axiosDownload(params: AxiosDownload): Promise<any> {
+  axiosDownload(params: AxiosDownload): Promise<{ fileName: string }> {
     const { url, data, controller, fileName, onDownloadProgress } = params
     return new Promise((resolve, reject) => {
       this.axiosInstance
@@ -153,10 +153,11 @@ class MyAxios {
           }
           a.href = URL.createObjectURL(blob)
           document.body.appendChild(a)
+          const downloadFileName = a.download
           a.click()
           URL.revokeObjectURL(a.href)
           document.body.removeChild(a)
-          resolve(true)
+          resolve({ fileName: downloadFileName })
         })
         .catch((err) => {
           reject(err)
