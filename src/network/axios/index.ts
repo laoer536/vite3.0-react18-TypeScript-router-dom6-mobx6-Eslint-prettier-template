@@ -93,16 +93,16 @@ class MyAxios {
     return this.axiosInstance.get(url, { params: data })
   }
 
-  post<T>(url: string, data?: object): Promise<T> {
-    return this.axiosInstance.post(url, data)
+  post<T>(url: string, data?: object, params?: object): Promise<T> {
+    return this.axiosInstance.post(url, data, { params })
   }
 
-  put<T>(url: string, data?: object): Promise<T> {
-    return this.axiosInstance.put(url, data)
+  put<T>(url: string, data?: object, params?: object): Promise<T> {
+    return this.axiosInstance.put(url, data, { params })
   }
 
   delete<T>(url: string, data?: object): Promise<T> {
-    return this.axiosInstance.delete(url, data)
+    return this.axiosInstance.delete(url, { params: data })
   }
 
   upload<T = any>(data: Upload): Promise<T> {
