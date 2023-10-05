@@ -7,7 +7,7 @@ This starter template includes:
 - [React Router dom 6](https://reactrouter.com/en/main)
 - [zustand](https://github.com/pmndrs/zustand): Popular React State Management Solution.
 - Introduce typescript, use tsx writing style.
-- Aktiver Eslint,prettier,husky,automatisk specifikation af projektkode.
+- Aktiver Eslint,prettier,husky,stylelint, automatisk specifikation af projektkode.
 
 Unplugin Utilities:
 
