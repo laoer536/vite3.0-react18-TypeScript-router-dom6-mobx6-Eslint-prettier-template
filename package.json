@@ -13,27 +13,31 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "axios": "^1.4.0",
+    "axios": "^1.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.11.1",
-    "vconsole": "^3.15.0",
-    "zustand": "^4.3.8"
+    "react-router-dom": "^6.16.0",
+    "vconsole": "^3.15.1",
+    "zustand": "^4.4.3"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.7.1",
+    "@commitlint/cli": "^17.7.2",
     "@commitlint/config-conventional": "^17.7.0",
-    "@types/node": "^20.0.0",
-    "@types/react": "^18.2.5",
-    "@types/react-dom": "^18.2.3",
-    "@vitejs/plugin-react": "^4.0.0",
-    "eslint": "^8.39.0",
-    "eslint-config-code-style-lint-react-ts": "^3.0.5",
+    "@types/node": "^20.8.2",
+    "@types/react": "^18.2.25",
+    "@types/react-dom": "^18.2.10",
+    "@vitejs/plugin-react": "^4.1.0",
+    "eslint": "^8.50.0",
+    "eslint-config-code-style-lint-react-ts": "^3.0.8",
     "husky": "^8.0.3",
-    "prettier": "^2.8.8",
-    "sass": "^1.62.1",
-    "typescript": "^5.0.4",
-    "unplugin-auto-import": "^0.15.3",
-    "vite": "^4.3.5"
+    "prettier": "^3.0.3",
+    "sass": "^1.68.0",
+    "stylelint": "^15.10.3",
+    "stylelint-config-standard-scss": "^11.0.0",
+    "stylelint-order": "^6.0.3",
+    "stylelint-prettier": "^4.0.2",
+    "typescript": "^5.2.2",
+    "unplugin-auto-import": "^0.16.6",
+    "vite": "^4.4.11"
   }
 }
