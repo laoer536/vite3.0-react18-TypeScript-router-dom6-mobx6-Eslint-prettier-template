@@ -9,5 +9,5 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <BrowserRouter basename={import.meta.env.VITE_PUBLIC_PATH as string}>
       <App />
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 )
