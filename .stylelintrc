@@ -2,7 +2,7 @@
   "extends": ["stylelint-config-standard-scss", "stylelint-prettier/recommended"],
   "plugins": ["stylelint-order"],
   "rules": {
-    "order/order": ["declarations", "custom-properties", "dollar-variables", "rules", "at-rules"],
+    "order/order": ["custom-properties", "dollar-variables", "declarations", "rules", "at-rules"],
     "order/properties-alphabetical-order": true
   }
 }
