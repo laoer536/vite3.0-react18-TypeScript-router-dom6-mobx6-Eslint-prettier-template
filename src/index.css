@@ -1,41 +1,41 @@
 :root {
+  background-color: #242424;
+  color: rgb(255 255 255 / 87%);
+  color-scheme: light dark;
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  font-synthesis: none;
+  font-weight: 400;
+  line-height: 24px;
+  text-rendering: optimizelegibility;
+  text-size-adjust: 100%;
 }
+
 #root {
-  max-width: 1280px;
   margin: 0 auto;
+  max-width: 1280px;
   padding: 2rem;
   text-align: center;
 }
 
 a {
-  font-weight: 500;
   color: #646cff;
+  font-weight: 500;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
 
 body {
-  margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
+  margin: 0;
   min-height: 100vh;
+  min-width: 320px;
+  place-items: center;
 }
 
 h1 {
@@ -44,19 +44,21 @@ h1 {
 }
 
 button {
-  border-radius: 8px;
+  background-color: #1a1a1a;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
   font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
+  padding: 0.6em 1.2em;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -64,12 +66,14 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
+    background-color: #fff;
     color: #213547;
-    background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
