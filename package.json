@@ -7,10 +7,12 @@
     "dev": "vite",
     "build": "tsc && vite build --mode production",
     "build:test": "tsc && vite build --mode test",
+    "build:docker": "tsc && vite build --mode docker",
     "preview": "vite preview",
     "lint": "eslint . --ext .js,.ts,.jsx,.tsx --fix",
     "format": "prettier --write \"./**/*.{html,tsx,ts,js,json,md}\"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "docker:build": "docker build -t docker-vue3 ."
   },
   "dependencies": {
     "axios": "^1.5.1",
