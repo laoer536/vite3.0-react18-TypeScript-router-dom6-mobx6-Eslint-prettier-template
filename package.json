@@ -12,7 +12,7 @@
     "lint": "eslint . --ext .js,.ts,.jsx,.tsx --fix",
     "format": "prettier --write \"./**/*.{html,tsx,ts,js,json,md}\"",
     "prepare": "husky install",
-    "docker:build": "docker build -t docker-vue3 ."
+    "docker:build": "docker build -t docker-react ."
   },
   "dependencies": {
     "axios": "^1.5.1",
