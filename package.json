@@ -12,7 +12,9 @@
     "lint": "eslint . --ext .js,.ts,.jsx,.tsx --fix",
     "format": "prettier --write \"./**/*.{html,tsx,ts,js,json,md}\"",
     "prepare": "husky install",
-    "docker:build": "docker build -t docker-react ."
+    "docker:build": "docker build -t docker-react .",
+    "docker:run": "docker rm -f docker-react && docker run --name docker-react -d -p 8082:8082 docker-react",
+    "release:local": "pnpm docker:build && pnpm docker:run"
   },
   "dependencies": {
     "axios": "^1.5.1",

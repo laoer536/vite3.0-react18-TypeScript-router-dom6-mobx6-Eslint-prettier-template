@@ -1,4 +1,5 @@
 import reactLogo from '@assets/react.svg'
+import dockerLogo from '@assets/Docker.svg'
 import HomeStyle from './index.module.scss'
 import { useNavigate } from 'react-router-dom'
 import { useUserStore } from '@store/user'
@@ -19,6 +20,9 @@ function Home() {
         </a>
         <a href="https://reactjs.org" target="_blank" rel="noreferrer">
           <img src={reactLogo} className={`${HomeStyle.logo} ${HomeStyle.react}`} alt="React logo" />
+        </a>
+        <a href="https://forums.docker.com/" target="_blank" rel="noreferrer">
+          <img src={dockerLogo} className={HomeStyle.logo} alt="Docker logo" />
         </a>
       </div>
       <h1>Vite + React</h1>
