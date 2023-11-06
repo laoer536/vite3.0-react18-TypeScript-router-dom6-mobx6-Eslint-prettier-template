@@ -33,6 +33,7 @@
     "@vitejs/plugin-react": "^4.1.0",
     "eslint": "^8.50.0",
     "eslint-config-code-style-lint-react-ts": "^3.0.8",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
     "husky": "^8.0.3",
     "prettier": "^3.0.3",
     "sass": "^1.68.0",

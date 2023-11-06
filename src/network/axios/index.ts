@@ -1,7 +1,7 @@
 import type { AxiosError, AxiosInstance, AxiosRequestConfig } from 'axios'
 import axios from 'axios'
-import { axiosBaseOptions } from '@/network/axios/axios-setup'
 
+import { axiosBaseOptions } from '@/network/axios/axios-setup'
 import type { AxiosDownload, Upload, UrlDownload } from '@/network/axios/type'
 import { UploadStream } from '@/network/axios/type'
 

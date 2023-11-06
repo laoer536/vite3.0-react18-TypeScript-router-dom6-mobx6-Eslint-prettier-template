@@ -1,12 +1,13 @@
- {
+{
   "env": {
     "browser": true,
     "es2021": true,
     "node": true
   },
-  "extends": [
-    "./.eslintrc-auto-import.json",
-    "code-style-lint-react-ts"
-  ],
-  "rules": {}
+  "extends": ["./.eslintrc-auto-import.json", "code-style-lint-react-ts"],
+  "plugins": ["simple-import-sort"],
+  "rules": {
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
+  }
 }

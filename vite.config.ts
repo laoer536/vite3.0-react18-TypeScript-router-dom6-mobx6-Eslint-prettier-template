@@ -1,8 +1,8 @@
 import react from '@vitejs/plugin-react'
-import { defineConfig, loadEnv } from 'vite'
-import type { ConfigEnv } from 'vite'
 import { resolve } from 'path'
 import AutoImport from 'unplugin-auto-import/vite'
+import type { ConfigEnv } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 
 // https://vitejs.dev/config/
 export default ({ command, mode }: ConfigEnv) => {
