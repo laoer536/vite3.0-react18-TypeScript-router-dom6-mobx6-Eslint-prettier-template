@@ -29,3 +29,11 @@ Unplugin Utilities:
    > Production Package：pnpm build
    >
    > (The environment variable file (env) has been added to the root directory, so you can add packaging commands and environment files according to your project.）
+
+### How to use docker?
+
+1. Ensure that Docker is installed on your computer.
+
+2. Just run `pnpm release:local`
+
+3. Then you can view your project on `<your IP>:8082`
