@@ -1,6 +1,4 @@
 import { useUserStore } from '@store/user'
-import React from 'react'
-
 function About() {
   const [pageTitle] = useState('laoer536-关于页面')
   const { num, changeNum } = useUserStore()

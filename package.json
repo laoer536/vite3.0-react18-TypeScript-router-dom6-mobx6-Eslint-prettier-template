@@ -9,10 +9,10 @@
     "build:test": "tsc && vite build --mode test",
     "build:docker": "tsc && vite build --mode docker",
     "preview": "vite preview",
-    "lint": "eslint . --ext .js,.ts,.jsx,.tsx --fix",
+    "lint": "tsc && eslint . --ext .js,.ts,.jsx,.tsx --fix",
     "format": "prettier --write \"./**/*.{html,tsx,ts,js,json,md}\"",
     "prepare": "husky install",
-    "docker:build": "docker build -t docker-react .",
+    "docker:build": "tsc && docker build -t docker-react .",
     "docker:run": "docker rm -f docker-react && docker run --name docker-react -d -p 8082:8082 docker-react",
     "release:local": "pnpm docker:build && pnpm docker:run"
   },
