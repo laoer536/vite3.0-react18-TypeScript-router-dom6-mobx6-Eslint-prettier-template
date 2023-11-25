@@ -37,3 +37,7 @@ Unplugin Utilities:
 2. Just run `pnpm release:local`
 
 3. Then you can view your project on `<your IP>:8082`
+
+### Note
+
+Vite5 requires your node version to be 18+ or 20+.
