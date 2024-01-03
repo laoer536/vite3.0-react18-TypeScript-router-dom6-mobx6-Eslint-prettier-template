@@ -1,8 +1,8 @@
-# Vite4, React18 (A simple generic example template)
+# Vite5, React18 (A simple generic example template)
 
 This starter template includes:
 
-- [Vite 4](https://vitejs.dev/guide/)
+- [Vite 5](https://vitejs.dev/guide/)
 - [React18](https://react.docschina.org/)
 - [React Router dom 6](https://reactrouter.com/en/main)
 - [zustand](https://github.com/pmndrs/zustand): Popular React State Management Solution.
@@ -37,3 +37,11 @@ Unplugin Utilities:
 2. Just run `pnpm release:local`
 
 3. Then you can view your project on `<your IP>:8082`
+
+### Note
+
+Vite5 requires your node version to be 18+ or 20+.
+
+### Support
+
+[![JetBrains Logo (Main) logo](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.png)](https://jb.gg/OpenSourceSupport)
