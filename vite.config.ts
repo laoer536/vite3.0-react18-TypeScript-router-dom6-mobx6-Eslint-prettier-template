@@ -51,9 +51,7 @@ export default ({ command, mode }: ConfigEnv) => {
     css: {
       // css预处理器
       preprocessorOptions: {
-        sass: {
-          javascriptEnabled: true,
-        },
+        sass: {},
       },
     },
     //构建
