@@ -170,7 +170,7 @@ class MyAxios {
     const a = document.createElement('a')
     a.style.display = 'none'
     a.download = fileName
-    a.href = serveBaseUrl ? `${serveBaseUrl}${fileUrl}` : fileUrl
+    a.href = fileUrl.startsWith('http') ? fileUrl : `${serveBaseUrl}${fileUrl}`
     document.body.appendChild(a)
     a.click()
     URL.revokeObjectURL(a.href) // 释放URL 对象
