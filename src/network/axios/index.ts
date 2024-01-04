@@ -166,7 +166,7 @@ class MyAxios {
   }
 
   urlDownload(params: UrlDownload) {
-    const { fileName, serveBaseUrl, fileUrl } = params
+    const { fileName, serveBaseUrl = import.meta.env.VITE_API_SERVER_URL, fileUrl } = params
     const a = document.createElement('a')
     a.style.display = 'none'
     a.download = fileName
