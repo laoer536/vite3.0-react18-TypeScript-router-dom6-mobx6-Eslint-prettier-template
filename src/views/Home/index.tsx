@@ -1,6 +1,8 @@
 import dockerLogo from '@assets/Docker.svg'
+import { button } from '@assets/motion'
 import reactLogo from '@assets/react.svg'
 import { useUserStore } from '@store/user'
+import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 
 import HomeStyle from './index.module.scss'
@@ -15,7 +17,7 @@ function Home() {
 
   return (
     <div className={HomeStyle.home}>
-      <div>
+      <motion.div initial={{ translateY: -300 }} whileInView={{ translateY: 0 }} transition={{ type: 'spring' }}>
         <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
           <img src={publicPath + 'vite.svg'} className={HomeStyle.logo} alt="Vite logo" />
         </a>
@@ -25,17 +27,21 @@ function Home() {
         <a href="https://forums.docker.com/" target="_blank" rel="noreferrer">
           <img src={dockerLogo} className={HomeStyle.logo} alt="Docker logo" />
         </a>
-      </div>
+      </motion.div>
       <h1>Vite + React</h1>
       <div className={HomeStyle.card}>
         {/* eslint-disable-next-line react/no-unescaped-entities */}
-        <button onClick={changeNum}>UserStore's count is {num}</button>
+        <motion.button {...button} onClick={changeNum}>
+          UserStore&apos;s count is {num}
+        </motion.button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div>
       <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
-      <button onClick={goAboutPage}>点击跳转到about页面</button>
+      <motion.button {...button} onClick={goAboutPage}>
+        点击跳转到about页面
+      </motion.button>
     </div>
   )
 }
