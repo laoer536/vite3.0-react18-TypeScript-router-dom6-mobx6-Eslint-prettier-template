@@ -7,7 +7,7 @@ This starter template includes:
 - [React Router dom 6](https://reactrouter.com/en/main)
 - [zustand](https://github.com/pmndrs/zustand): Popular React State Management Solution.
 - [framer-motion](https://www.framer.com/motion/introduction/): It powers the amazing animations and interactions in Framer, the web builder for creative pros. Zero code, maximum speed.(If you don't need it, you can delete it.)
-- Docker support. 
+- Docker support.
 - Introduce typescript, use tsx writing style.
 - Aktiver Eslint,prettier,husky,stylelint, automatisk specifikation af projektkode.
 
