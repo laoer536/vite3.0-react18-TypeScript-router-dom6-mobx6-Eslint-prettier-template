@@ -7,8 +7,8 @@ import { defineConfig, loadEnv } from 'vite'
 // https://vitejs.dev/config/
 export default ({ command, mode }: ConfigEnv) => {
   const currentEnv = loadEnv(mode, process.cwd())
-  console.log('当前模式', command)
-  console.log('当前环境配置', currentEnv) //loadEnv即加载根目录下.env.[mode]环境配置文件
+  console.log('Current mode:', command)
+  console.log('Current environment configuration:', currentEnv) //loadEnv即加载根目录下.env.[mode]环境配置文件
   return defineConfig({
     plugins: [
       react(),

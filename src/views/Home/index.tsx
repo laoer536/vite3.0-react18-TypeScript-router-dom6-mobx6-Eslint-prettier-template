@@ -40,7 +40,7 @@ function Home() {
       </div>
       <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
       <motion.button {...button} onClick={goAboutPage}>
-        点击跳转到about页面
+        click to jump to the about page
       </motion.button>
     </div>
   )
