@@ -28,20 +28,22 @@ function Home() {
           <img src={dockerLogo} className={HomeStyle.logo} alt="Docker logo" />
         </a>
       </motion.div>
-      <h1>Vite + React</h1>
-      <div className={HomeStyle.card}>
-        {/* eslint-disable-next-line react/no-unescaped-entities */}
-        <motion.button {...button} onClick={changeNum}>
-          UserStore&apos;s count is {num}
+      <motion.div initial={{ translateY: 300 }} whileInView={{ translateY: 0 }} transition={{ type: 'spring' }}>
+        <h1>Vite + React</h1>
+        <div className={HomeStyle.card}>
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
+          <motion.button {...button} onClick={changeNum}>
+            UserStore&apos;s count is {num}
+          </motion.button>
+          <p>
+            Edit <code>src/App.tsx</code> and save to test HMR
+          </p>
+        </div>
+        <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
+        <motion.button {...button} onClick={goAboutPage}>
+          click to jump to the about page
         </motion.button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
-      <motion.button {...button} onClick={goAboutPage}>
-        click to jump to the about page
-      </motion.button>
+      </motion.div>
     </div>
   )
 }
