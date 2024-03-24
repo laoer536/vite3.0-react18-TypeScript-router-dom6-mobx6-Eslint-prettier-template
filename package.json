@@ -14,7 +14,8 @@
     "prepare": "husky install",
     "docker:build": "tsc && docker build -t docker-react .",
     "docker:run": "docker rm -f docker-react && docker run --name docker-react -d -p 8082:8082 docker-react",
-    "release:local": "pnpm docker:build && pnpm docker:run"
+    "release:local": "pnpm docker:build && pnpm docker:run",
+    "log:tree": "tree -N -I \"node_modules|.git|.idea\" -a"
   },
   "dependencies": {
     "axios": "^1.6.2",
