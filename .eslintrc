@@ -4,7 +4,7 @@
     "es2021": true,
     "node": true
   },
-  "extends": ["./.eslintrc-auto-import.json", "code-style-lint-react-ts"],
+  "extends": ["./.eslintrc-auto-import.json", "plugin:react-hooks/recommended", "code-style-lint-react-ts"],
   "plugins": ["simple-import-sort"],
   "rules": {
     "simple-import-sort/imports": "error",
