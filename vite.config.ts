@@ -59,6 +59,13 @@ export default ({ command, mode }: ConfigEnv) => {
       outDir: mode === 'docker' ? 'dist' : 'docs', //输出路径
       //构建后是否生成 source map 文件
       sourcemap: mode != 'production',
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            vc: ['vconsole'],
+          },
+        },
+      },
       //打包去掉打印信息 保留debugger vite3需要单独安装terser才行
       // minify: 'terser',
       // terserOptions: {
