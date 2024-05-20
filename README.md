@@ -39,7 +39,7 @@ Unplugin Utilities:
 
 2. Just run `pnpm release:local`
 
-3. Then you can view your project on `<your IP>:8082`
+3. Then you can view your project on `<your IP>`
 
 ### Note
 
