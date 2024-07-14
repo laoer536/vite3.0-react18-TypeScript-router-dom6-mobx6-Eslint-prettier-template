@@ -5,6 +5,8 @@ import { useUserStore } from '@store/user'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 
+import { cs } from '@/utils'
+
 import HomeStyle from './index.module.scss'
 
 const publicPath = import.meta.env.VITE_PUBLIC_PATH
@@ -22,7 +24,7 @@ function Home() {
           <img src={publicPath + 'vite.svg'} className={HomeStyle.logo} alt="Vite logo" />
         </a>
         <a href="https://reactjs.org" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className={`${HomeStyle.logo} ${HomeStyle.react}`} alt="React logo" />
+          <img src={reactLogo} className={cs(HomeStyle.logo, HomeStyle.react)} alt="React logo" />
         </a>
         <a href="https://forums.docker.com/" target="_blank" rel="noreferrer">
           <img src={dockerLogo} className={HomeStyle.logo} alt="Docker logo" />
