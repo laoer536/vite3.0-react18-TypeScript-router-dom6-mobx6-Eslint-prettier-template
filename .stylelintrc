@@ -3,6 +3,18 @@
   "plugins": ["stylelint-order"],
   "rules": {
     "order/order": ["custom-properties", "dollar-variables", "declarations", "rules", "at-rules"],
-    "order/properties-alphabetical-order": true
+    "order/properties-alphabetical-order": true,
+    "selector-class-pattern": [
+      "^[a-z][a-zA-Z0-9]*$",
+      {
+        "message": "The class name must use the camelCase naming convention."
+      }
+    ],
+    "keyframes-name-pattern": [
+      "^[a-z][a-zA-Z0-9]*$",
+      {
+        "message": "The animation name must use the camelCase naming convention."
+      }
+    ]
   }
 }
