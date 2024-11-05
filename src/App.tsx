@@ -1,4 +1,4 @@
-import WelcomeModal from '@components/Welcome'
+import GlobalProvider from '@components/GlobalProvider'
 import { useVcosole } from '@hooks/useVconsole'
 
 import MyRoutes from '@/router'
@@ -13,9 +13,8 @@ export default function App() {
     }
   }, [])
   return (
-    <div>
-      <WelcomeModal />
+    <GlobalProvider>
       <MyRoutes />
-    </div>
+    </GlobalProvider>
   )
 }
