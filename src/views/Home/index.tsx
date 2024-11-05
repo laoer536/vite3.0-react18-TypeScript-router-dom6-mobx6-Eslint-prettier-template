@@ -1,11 +1,11 @@
 import dockerLogo from '@assets/Docker.svg'
 import { button } from '@assets/motion'
 import reactLogo from '@assets/react.svg'
-import { welcomeEmitter } from '@components/Welcome/event.ts'
 import { useUserStore } from '@store/user'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 
+import { eventBus } from '@/utils'
 import { cs } from '@/utils'
 
 import HomeStyle from './index.module.scss'
@@ -22,7 +22,7 @@ function Home() {
     <div className={HomeStyle.home}>
       <motion.button
         style={{ marginBottom: '80px' }}
-        onClick={() => welcomeEmitter.emit('open', { title: 'welcome', content: 'Vite + React + Docker' })}
+        onClick={() => eventBus.emit('WelcomeModal:open', { title: 'welcome', content: 'Vite + React + Docker' })}
       >
         welcome
       </motion.button>

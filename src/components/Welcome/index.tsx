@@ -1,32 +1,38 @@
 import { FC, useEffect } from 'react'
 
-import { welcomeEmitter } from './event.ts'
+import { eventBus } from '@/utils'
+
 import styles from './index.module.scss'
 
 export interface WelcomeModalInfo {
   title?: string
   content?: string
-  visible: boolean
 }
 
 const WelcomeModal: FC = () => {
-  const [modalInfo, setModalInfo] = useState<WelcomeModalInfo>({ visible: false })
+  const [modalInfo, setModalInfo] = useState<WelcomeModalInfo>({})
+  const [isVisible, setIsVisible] = useState(false)
+
+  const close = () => {
+    setModalInfo({})
+    setIsVisible(false)
+  }
+
+  const open = (info: WelcomeModalInfo) => {
+    setModalInfo(info)
+    setIsVisible(true)
+  }
 
   useEffect(() => {
-    welcomeEmitter.on('close', () => {
-      setModalInfo({ ...modalInfo, visible: false })
-    })
-    welcomeEmitter.on('open', (info) => {
-      console.log(info)
-      setModalInfo({ ...modalInfo, ...info, visible: true })
-    })
+    eventBus.on('WelcomeModal:close', close)
+    eventBus.on('WelcomeModal:open', open)
     return () => {
-      welcomeEmitter.off('close')
-      welcomeEmitter.off('open')
+      eventBus.off('WelcomeModal:close')
+      eventBus.off('WelcomeModal:open')
     }
   }, [])
 
-  if (!modalInfo?.visible) {
+  if (!isVisible) {
     return null
   }
 
@@ -35,7 +41,7 @@ const WelcomeModal: FC = () => {
       <div className={styles.modalContent}>
         <div className={styles.modalHeader}>
           <h2 className={styles.modalTitle}>{modalInfo?.title}</h2>
-          <button className={styles.closeButton} onClick={() => setModalInfo({ ...modalInfo, visible: false })}>
+          <button className={styles.closeButton} onClick={close}>
             ×
           </button>
         </div>
