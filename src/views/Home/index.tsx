@@ -46,13 +46,14 @@ function Home() {
         <motion.button {...button} onClick={goAboutPage}>
           click to jump to the about page
         </motion.button>
+        <br />
+        <motion.button
+          style={{ marginTop: '80px' }}
+          onClick={() => eventBus.emit('WelcomeModal:open', { title: 'welcome', content: 'Vite + React + Docker' })}
+        >
+          welcome
+        </motion.button>
       </motion.div>
-      <motion.button
-        style={{ marginTop: '80px' }}
-        onClick={() => eventBus.emit('WelcomeModal:open', { title: 'welcome', content: 'Vite + React + Docker' })}
-      >
-        welcome
-      </motion.button>
     </div>
   )
 }
