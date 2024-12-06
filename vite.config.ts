@@ -29,11 +29,6 @@ export default ({ command, mode }: ConfigEnv) => {
       //别名
       alias: {
         '@': resolve(__dirname, './src'),
-        '@components': resolve(__dirname, './src/components'),
-        '@store': resolve(__dirname, './src/store'),
-        '@views': resolve(__dirname, './src/views'),
-        '@assets': resolve(__dirname, './src/assets'),
-        '@hooks': resolve(__dirname, './src/hooks'),
       },
     },
     //服务

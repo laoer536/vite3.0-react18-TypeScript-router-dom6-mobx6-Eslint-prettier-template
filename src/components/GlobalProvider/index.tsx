@@ -1,5 +1,6 @@
-import WelcomeModal from '@components/Welcome'
 import { FC, Fragment, ReactNode } from 'react'
+
+import WelcomeModal from '@/components/Welcome'
 
 interface GlobalProviderProps {
   children: ReactNode

@@ -1,5 +1,6 @@
-import { WelcomeModalInfo } from '@components/Welcome/index.tsx'
 import mitt, { Emitter } from 'mitt'
+
+import { WelcomeModalInfo } from '@/components/Welcome/index.tsx'
 
 export type Events = {
   'WelcomeModal:open': WelcomeModalInfo

@@ -1,6 +1,7 @@
-import { button } from '@assets/motion'
-import { useUserStore } from '@store/user'
 import { motion } from 'framer-motion'
+
+import { button } from '@/assets/motion'
+import { useUserStore } from '@/store/user'
 
 function About() {
   const navigate = useNavigate()

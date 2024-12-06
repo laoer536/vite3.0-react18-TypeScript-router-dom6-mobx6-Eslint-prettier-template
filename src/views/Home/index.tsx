@@ -1,10 +1,10 @@
-import dockerLogo from '@assets/Docker.svg'
-import { button } from '@assets/motion'
-import reactLogo from '@assets/react.svg'
-import { useUserStore } from '@store/user'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 
+import dockerLogo from '@/assets/Docker.svg'
+import { button } from '@/assets/motion'
+import reactLogo from '@/assets/react.svg'
+import { useUserStore } from '@/store/user'
 import { eventBus } from '@/utils'
 import { cs } from '@/utils'
 
@@ -20,12 +20,6 @@ function Home() {
 
   return (
     <div className={HomeStyle.home}>
-      <motion.button
-        style={{ marginBottom: '80px' }}
-        onClick={() => eventBus.emit('WelcomeModal:open', { title: 'welcome', content: 'Vite + React + Docker' })}
-      >
-        welcome
-      </motion.button>
       <motion.div initial={{ translateY: -300 }} whileInView={{ translateY: 0 }} transition={{ type: 'spring' }}>
         <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
           <img src={publicPath + 'vite.svg'} className={HomeStyle.logo} alt="Vite logo" />
@@ -53,6 +47,12 @@ function Home() {
           click to jump to the about page
         </motion.button>
       </motion.div>
+      <motion.button
+        style={{ marginTop: '80px' }}
+        onClick={() => eventBus.emit('WelcomeModal:open', { title: 'welcome', content: 'Vite + React + Docker' })}
+      >
+        welcome
+      </motion.button>
     </div>
   )
 }
