@@ -2,7 +2,7 @@
 
 This starter template includes:
 
-- [Vite 5](https://vitejs.dev/guide/)
+- [Vite 6](https://vitejs.dev/guide/)
 - [React18](https://react.docschina.org/)
 - [React Router dom 6](https://reactrouter.com/en/main)
 - [zustand](https://github.com/pmndrs/zustand): Popular React State Management Solution.
