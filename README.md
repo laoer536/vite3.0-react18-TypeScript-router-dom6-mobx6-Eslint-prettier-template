@@ -1,4 +1,4 @@
-# Vite5, React18 (A simple generic example template)
+# Vite6, React18 (A simple generic example template)
 
 This starter template includes:
 
